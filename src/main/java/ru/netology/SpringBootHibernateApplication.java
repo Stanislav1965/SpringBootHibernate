@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.domain.Sort;
 import ru.netology.entity.Person;
 import ru.netology.repository.PersonRepository;
 
@@ -38,7 +39,7 @@ public class SpringBootHibernateApplication implements CommandLineRunner {
         entityManager.persist(new Person("Ellie", "Creed", 55, "921 555-25-59", "Moscow"));
 
         System.out.println();
-        List<Person> personList = personRepository.getPersonsByCity("Moscow");
+        List<Person> personList = personRepository.findByAge(40, Sort.by("age")); // personRepository.findByCity_of_living("Moscow");
         for (Person person : personList) {
             System.out.println(person);
         }

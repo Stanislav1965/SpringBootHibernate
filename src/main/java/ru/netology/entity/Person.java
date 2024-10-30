@@ -30,14 +30,14 @@ public class Person {
     private String phone_number;
 
     @Column(nullable = false)
-    private String city_of_living;
+    private String city;
 
-    public Person(String name, String surname, Integer age, String phone_number, String city_of_living) {
+    public Person(String name, String surname, Integer age, String phone_number, String city) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.phone_number = phone_number;
-        this.city_of_living = city_of_living;
+        this.city = city;
 
     }
 }
